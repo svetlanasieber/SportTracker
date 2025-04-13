@@ -50,7 +50,7 @@ async function loadBoardEventHandler() {
             locationElement.textContent = workout.location;
             locationElement.setAttribute('id', 'location')
 
-            const buttonsContainer = document.createElement('div'); // Create the new div for buttons
+            const buttonsContainer = document.createElement('div'); 
             buttonsContainer.className = 'buttons-container';
 
             const changeBtn = document.createElement('button');
@@ -61,13 +61,13 @@ async function loadBoardEventHandler() {
             doneBtn.className = 'delete-btn';
             doneBtn.textContent = 'Done';
 
-            buttonsContainer.appendChild(changeBtn); // Append buttons to the new div
+            buttonsContainer.appendChild(changeBtn); 
             buttonsContainer.appendChild(doneBtn);
 
             container.appendChild(workoutElement);
             container.appendChild(dateElement);
             container.appendChild(locationElement);
-            container.appendChild(buttonsContainer); // Append the new div to the container
+            container.appendChild(buttonsContainer); 
 
             list.appendChild(container);
         });
