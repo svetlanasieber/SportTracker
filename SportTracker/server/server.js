@@ -74,7 +74,7 @@
             const method = req.method;
             console.info(`<< ${req.method} ${req.url}`);
 
-            // Redirect fix for admin panel relative paths
+            
             if (req.url.slice(-6) == '/admin') {
                 res.writeHead(302, {
                     'Location': `http://${req.headers.host}/admin/`
@@ -90,7 +90,7 @@
             let result = '';
             let context;
 
-            // NOTE: the OPTIONS method results in undefined result and also it never processes plugins - keep this in mind
+            
             if (method == 'OPTIONS') {
                 Object.assign(headers, {
                     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS, PATCH',
@@ -146,8 +146,7 @@
                     result = await service(context, { method, tokens, query, body });
                 }
 
-                // NOTE: logout does not return a result
-                // in this case the content type header should be omitted, to allow checks on the client
+                
                 if (result !== undefined) {
                     result = JSON.stringify(result);
                 } else {
